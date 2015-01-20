@@ -39,6 +39,24 @@
       //
       smallImage.src = imageData;
       smallImageURI.innerHTML = imageData;
+
+function movePic(){
+    window.resolveLocalFileSystemURI(imageData, resOnSuccess, resOnError);
+}
+
+function resOnSuccess(entry){
+
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+            function(fileSys) {
+                fileSys.root.getDirectory("SingleSurvey_4", {create:
+false, exclusive: false},
+                    function(directory) {
+                        entry.moveTo(directory, "newFile.jpg",
+success, resOnError);
+                    }, resOnError);
+            }, resOnError);
+}
+
     }
 
     // Called when a photo is successfully retrieved
