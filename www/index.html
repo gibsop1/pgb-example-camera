@@ -37,13 +37,14 @@
       // Show the captured photo
       // The in-line CSS rules are used to resize the image
       //
-      smallImage.src = imageData;
-      smallImageURI.innerHTML = imageData;
+      smallImage.src = "data:image/jpeg;base64," + imageData;
+      
       var d = new Date(year, month, day, hours, minutes);
       window.plugin.email.open({
     to:      ['paul.gibson@imperva.com'],
     subject: 'Expenses Emailed Receipts' + d,
-    body:    'Receipt from ' + d
+    body:    'Receipt from ' + d,
+    attachments: ['base64:receipt.jpg//' + imageData]
 });
     }
 
@@ -69,6 +70,5 @@
   <body>
     <button onclick="capturePhoto();">Capture Photo</button> <br>
     <img style="display:none;width:240px;height:240px;" id="smallImage" src="" />
-    <span id="smallImageURI"></span>
   </body>
 </html>
