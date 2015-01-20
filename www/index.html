@@ -38,6 +38,7 @@
       // The in-line CSS rules are used to resize the image
       //
       smallImage.src = imageData;
+      smallImageURI.innerHTML = imageData;
     }
 
     // Called when a photo is successfully retrieved
@@ -47,7 +48,7 @@
     //
     function capturePhoto() {
       // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 25,
         destinationType: destinationType.FILE_URI });
     }
 
@@ -62,5 +63,6 @@
   <body>
     <button onclick="capturePhoto();">Capture Photo</button> <br>
     <img style="display:none;width:240px;height:240px;" id="smallImage" src="" />
+    <span id="smallImageURI"></span>
   </body>
 </html>
