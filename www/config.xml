@@ -6,13 +6,13 @@
         id        = "com.phonegap.hello-world"
         version   = "1.0.0">
 
-    <name>Camera App</name>
+    <name>Receipts</name>
 
     <description>
-        Camera example app.
+        Receipt Emailer App.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
+    <author href="http://blueicecube.co.uk" email="info@blueicecube.co.uk">
         PhoneGap Team
     </author>
 
