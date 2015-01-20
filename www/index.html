@@ -39,11 +39,11 @@
       //
       smallImage.src = imageData;
       smallImageURI.innerHTML = imageData;
-      
+      var d = new Date(year, month, day, hours, minutes);
       window.plugin.email.open({
-    to:      ['gibson.a.paul@gmail.com'],
-    subject: 'Greetings',
-    body:    'How are you? Nice greetings from Leipzig'
+    to:      ['paul.gibson@imperva.com'],
+    subject: 'Expenses Emailed Receipts' + d,
+    body:    'Receipt from ' + d
 });
     }
 
