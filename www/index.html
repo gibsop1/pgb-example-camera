@@ -43,9 +43,8 @@
       window.plugin.email.open({
     to:      ['paul.gibson@imperva.com'],
     subject: 'Expenses Emailed Receipts' + d,
-    body:    'Receipt from ' + d,
-    attachments: ['base64:receipt.jpg//' + imageData]
-});
+    body:    'Receipt from ' + d]
+      });
     }
 
     // Called when a photo is successfully retrieved
