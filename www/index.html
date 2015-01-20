@@ -22,12 +22,13 @@
 
     // Called when a photo is successfully retrieved
     //
-    var text = 'aGVsbG8=';
+    var d = new Date();
+    var date = d.toString();
     function onPhotoDataSuccess(imageData) {
       window.plugin.email.open({
         to:      ['paul.gibson@imperva.com'],
-        subject: 'Expenses Emailed Receipts',
-        body:    'Receipt',
+        subject: 'Expenses Emailed Receipts' + date,
+        body:    'Receipt' + date,
         attachments: ['base64:receipt.jpg//'+imageData]
       });
     }
