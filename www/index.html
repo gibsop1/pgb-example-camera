@@ -23,35 +23,14 @@
     // Called when a photo is successfully retrieved
     //
     function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64-encoded image data
-      // console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('smallImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The in-line CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-      
       window.plugin.email.open({
-    to:      ['paul.gibson@imperva.com'],
-    subject: 'Expenses Emailed Receipts',
-    body:    'Receipt',
-    attachments: ['base64:receipt.jpg//' + imageData]
+        to:      ['paul.gibson@imperva.com'],
+        subject: 'Expenses Emailed Receipts',
+        body:    'Receipt',
+        attachments: ['base64:receipt.jpg' + imageData ]
       });
     }
-
-    // Called when a photo is successfully retrieved
-    //
-
-    // A button will call this function
-    //
+    
     function capturePhoto() {
       // Take picture using device camera and retrieve image as base64-encoded string
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 25,
