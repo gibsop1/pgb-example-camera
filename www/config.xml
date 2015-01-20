@@ -17,6 +17,8 @@
     </author>
 
     <preference name="phonegap-version" value="3.0.0" /> 
-
+    
+    <gap:platform name="android" />
+    
     <gap:plugin name="org.apache.cordova.core.camera" />
 </widget>
