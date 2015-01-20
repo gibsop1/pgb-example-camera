@@ -21,6 +21,7 @@
     <gap:platform name="android" />
     
     <gap:plugin name="org.apache.cordova.core.camera" />
+    <gap:plugin name="org.apache.cordova.FileUtils" />
     <plugin name="File" value="org.apache.cordova.FileUtils" />
     <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
 </widget>
